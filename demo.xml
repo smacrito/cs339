@@ -1,0 +1,7 @@
+<xml version="1.0"?>
+
+<xs:schema>
+	<xs:element name="quiz">
+		<xs:element name="question" type="xs:string"/>
+	</xs:element name="quiz">
+</xs:schema>
