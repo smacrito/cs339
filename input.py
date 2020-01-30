@@ -88,6 +88,9 @@ def ExportToXML (data):
 def Main():
     data = initXML()
     data = MultipleChoiceQuestion(data, "Question", "Choice1", "Choice2", "Choice3", "Choice4", "Choice5", "Choice2")
+    data = TrueFalseQuestion(data, "Question", "True")
+    data = ShortResponseQuestion(data, "Question")
+    data = ShortResponseQuestion(data, "Question")
     ExportToXML(data)
 
 Main()
