@@ -59,7 +59,21 @@ def TrueFalseQuestion(data, questionin, answerin):
 
     return(data)
 
-#def ShortResponseQuestion(data, questionin):
+def ShortResponseQuestion(data, questionin):
+    #Setup Tree
+    ShortResponseQuestionType = ET.SubElement(data, 'ShortResponseQuestionType')
+    question = ET.SubElement(ShortResponseQuestionType, 'question')
+    answer = ET.SubElement(ShortResponseQuestionType, 'answer')
+
+    #Set Names
+    question.set('name', 'question')
+    answer.set('name', 'answer')
+
+    #Fill Values
+    question.text = questionin
+    #answer is reserved to be filled by user?
+
+    return  data
 
 
 
