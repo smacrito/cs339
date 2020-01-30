@@ -78,8 +78,16 @@ def ShortResponseQuestion(data, questionin):
     return  data
 
 
+
 #Finally when published it will use this method to produce an XML to be sent to a recipient
 def ExportToXML (data):
     mydata = ET.tostring(data)
-    myfile = open("temp.xml", "w")
+    myfile = open("temp.xml", "wb")
     myfile.write(mydata)
+
+def Main():
+    data = initXML()
+    data = MultipleChoiceQuestion(data, "Question", "Choice1", "Choice2", "Choice3", "Choice4", "Choice5", "Choice2")
+    ExportToXML(data)
+
+Main()
