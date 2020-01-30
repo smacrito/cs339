@@ -77,7 +77,22 @@ def ShortResponseQuestion(data, questionin):
 
     return  data
 
+def FillInTheBlankQuestion(data, part1in, part2in, answerin):
+    #Setup Tree
+    FillInTheBlankQuestionType = ET.SubElement(data, 'FillInTheBlankQuestionType')
+    parts = ET.SubElement(FillInTheBlankQuestionType,'parts')
+    part1 = ET.SubElement(parts, 'part')
+    part2 = ET.SubElement(parts, 'part')
+    answer = ET.SubElement(FillInTheBlankQuestionType,'answer')
+    #Set Names
 
+
+    #Fill Values
+    part1.text = part1in
+    part2.text = part2in
+    answer.text = answerin
+
+    return data
 
 #Finally when published it will use this method to produce an XML to be sent to a recipient
 def ExportToXML (data):
