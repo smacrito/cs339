@@ -1,9 +1,11 @@
 import xml.etree.ElementTree as ET
 
+#Setup Program will run this first
 def initXML():
     data = ET.Element('data')
     return data
 
+#Then the user will set as many questions as they like using these methods
 def MultipleChoiceQuestion(data, questionin, option1in, option2in, option3in, option4in, option5in, answerin):
     #Set up tree
     MultipleChoiceQuestionType = ET.SubElement(data, 'MultipleChoiceQuestionType')
@@ -76,8 +78,7 @@ def ShortResponseQuestion(data, questionin):
     return  data
 
 
-
-
+#Finally when published it will use this method to produce an XML to be sent to a recipient
 def ExportToXML (data):
     mydata = ET.tostring(data)
     myfile = open("temp.xml", "w")
