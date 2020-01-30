@@ -18,15 +18,6 @@ def MultipleChoiceQuestion(data, questionin, option1in, option2in, option3in, op
     option5 = ET.SubElement(options, 'option')
     answer = ET.SubElement(MultipleChoiceQuestionType,'answer')
 
-    #Set names
-    question.set('name','question')
-    option1.set('name','option1')
-    option2.set('name', 'option2')
-    option3.set('name', 'option3')
-    option4.set('name', 'option4')
-    option5.set('name','option5')
-    answer.set('name','answer')
-
     #Fill values
     question.text = questionin
     option1.text = option1in
@@ -47,12 +38,6 @@ def TrueFalseQuestion(data, questionin, answerin):
     false = ET.SubElement(options, 'option')
     answer = ET.SubElement(TrueFalseQuestionType, 'answer')
 
-    #Set Names
-    question.set('name', 'question')
-    true.set('name', 'true')
-    false.set('name', 'false')
-    answer.set('name', 'answer')
-
     #Fill Values
     question.text = questionin
     answer.text = answerin
@@ -67,10 +52,6 @@ def ShortResponseQuestion(data, questionin):
     question = ET.SubElement(ShortResponseQuestionType, 'question')
     answer = ET.SubElement(ShortResponseQuestionType, 'answer')
 
-    #Set Names
-    question.set('name', 'question')
-    answer.set('name', 'answer')
-
     #Fill Values
     question.text = questionin
     #answer is reserved to be filled by user?
@@ -84,8 +65,6 @@ def FillInTheBlankQuestion(data, part1in, part2in, answerin):
     part1 = ET.SubElement(parts, 'part')
     part2 = ET.SubElement(parts, 'part')
     answer = ET.SubElement(FillInTheBlankQuestionType,'answer')
-    #Set Names
-
 
     #Fill Values
     part1.text = part1in
