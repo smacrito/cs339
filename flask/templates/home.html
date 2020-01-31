@@ -13,5 +13,9 @@
 			</p>
 		</fieldset>
 	</form>
+	{% for question in questions%}
+		<h1>{{question.question}}</h1>
+		<p>{{ question.answer }}</p>
+	{% endfor %}
 </body>
 </html>
