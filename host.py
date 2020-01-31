@@ -16,7 +16,7 @@ def printAll():
     for qText in root.findall('question'):
         qText = qText.find('qText').text
         location = qText.find('qText')
-        print("question: ", qText,  "Location: " , location)
+        print("question: ", qText,  "Location: ", location)
 
 #using xPath syntax to iterate through tree
 def xPath():
