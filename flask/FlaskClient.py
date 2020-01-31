@@ -1,10 +1,10 @@
 from flask import Flask, render_template
-import xmltodict
+#import xmltodict
 
 app = Flask(__name__)
 
-with open('C:/Users/Sammy/Desktop/School/COMP339/cs339/flask/demo2.xml') as fd:
-    doc = xmltodict.parse(fd.read())
+#with open('C:/Users/Sammy/Desktop/School/COMP339/cs339/flask/demo2.xml') as fd:
+#   doc = xmltodict.parse(fd.read())
 
 questions = [
     {
@@ -16,7 +16,6 @@ questions = [
 @app.route('/')
 def hello():
     return render_template('home.html', questions=questions)
-
 
 
 
