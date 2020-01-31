@@ -8,7 +8,7 @@ with open('C:/Users/Sammy/Desktop/School/COMP339/cs339/flask/demo2.xml') as fd:
 
 @app.route('/')
 def hello():
-    return (doc['data'])
+    return render_template('home.html')
 
 
 
