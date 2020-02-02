@@ -13,8 +13,6 @@ def GetQuestionCount(tree):
 
 def GetQuestion(number, tree):
     question = tree[number] #gets question
-    FindType(question[0]) #will then use this function to find type
+    type = question.tag #finds type w/o need for subfunction!
     #will use that type to decide what subfunction to use
 
-def FindType():
-    return 0
