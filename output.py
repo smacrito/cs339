@@ -21,6 +21,8 @@ def GetQuestion(number, tree):
         return TrueFalseQuestion(question)
     elif type == 'ShortResponseQuestionType':
         return ShortResponseQuestion(question)
+    else:
+        raise NameError('Question Type Mismatch in GetQuestion')
 
 def MultipleChoiceQuestion():
     return 0
