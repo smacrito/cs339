@@ -19,24 +19,20 @@ def GetQuestionType(question):
     type = question.tag #finds type w/o need for subfunction!
     return type
 
-def tempunused(): #to be removed
-    #will use that type to decide what subfunction to use
-    if type == 'MultipleChoiceQuestionType':
-        return MultipleChoiceQuestion(question)
-    elif type == 'TrueFalseQuestionType':
-        return TrueFalseQuestion(question)
-    elif type == 'ShortResponseQuestionType':
-        return ShortResponseQuestion(question)
-    else:
-        raise NameError('Question Type Mismatch in GetQuestion')
+#Will change XML to have a unified format across all types (which is already basically followed)
+#Types will continue to exist to show the front end what it needs to look for from these next functions
+#Since not all will be used for every type
 
-def MultipleChoiceQuestion(question):
-    return 0
+def GetQuestion(question):
+    return question[0].text
 
-def TrueFalseQuestion(question):
-    return 0
+def GetOptions(question):
+    options = []
+    for option in question[1]:
+        options.add(option)
+    return options
 
-def ShortResponseQuestion(question):
-    return 0
+def GetAnswer(question):
+    return question[2].text
 
 
