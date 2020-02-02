@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, flash, redirect
 #passing class in from forms.py
 from forms import addQuestionForm
 #import xmltodict
@@ -17,13 +17,19 @@ questions = [
     }
 ]
 
-@app.route('/')
+@app.route('/home')
 def home():
     return render_template('home.html', questions=questions)
 
-@app.route('/addQuestion')
+#pass in get and post to allow sending data from user
+@app.route('/addQuestion', methods=['GET','POST'])
 def addQuestion():
     form = addQuestionForm()
+    #flash msg
+   # if form.validate_on_submit():
+        #flash msg, pass in f to pass data
+        #flash(f'Question added: {form.question.data}.')
+        #return redirect(url_for('/home'))
     return render_template('addQuestion.html', title='Add Question', form=form)
 
 
