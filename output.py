@@ -13,7 +13,13 @@ def GetQuestionCount(tree):
 
 def GetQuestion(number, tree):
     question = tree[number] #gets question
+    return question
+
+def GetQuestionType(question):
     type = question.tag #finds type w/o need for subfunction!
+    return type
+
+def tempunused(): #to be removed
     #will use that type to decide what subfunction to use
     if type == 'MultipleChoiceQuestionType':
         return MultipleChoiceQuestion(question)
@@ -24,13 +30,13 @@ def GetQuestion(number, tree):
     else:
         raise NameError('Question Type Mismatch in GetQuestion')
 
-def MultipleChoiceQuestion():
+def MultipleChoiceQuestion(question):
     return 0
 
-def TrueFalseQuestion():
+def TrueFalseQuestion(question):
     return 0
 
-def ShortResponseQuestion():
+def ShortResponseQuestion(question):
     return 0
 
 
