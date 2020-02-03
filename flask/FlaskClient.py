@@ -26,17 +26,29 @@ def home():
 #pass in get and post to allow sending data from user
 @app.route('/addQuestion', methods=['GET','POST'])
 def addQuestion():
+
     form = addQuestionForm()
+    questionList={'q':'','a':''}
+
+    print(questionList)
     #flash msg
     if form.validate_on_submit():
         print('enter flash')
         input_question = request.form['userQuestion']
+        input_answer = request.form['userAnswer']
         print(input_question)
+        print(input_answer)
+        questionList['q']=input_question
+        questionList['a']=input_answer
+        #questionList[1]=input_answer
+        print(questionList)
         #flash msg, pass in f to pass data
         flash(f'Question added: {form.userQuestion.data}.', 'success')
         return redirect(url_for('home'))
     return render_template('addQuestion.html', title='Add Question', form=form)
 
+def dictToXML():
+    xml=open("demo2.xml")
 
 #allows running flask from python directly, doesnt require env vars
 #if __name__ == '__main__':
