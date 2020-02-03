@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, flash, redirect, request
 #passing class in from forms.py
 from forms import addQuestionForm
 #import xmltodict
+import xml.etree.ElementTree as ET
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'test'
@@ -31,7 +32,7 @@ def addQuestion():
     questionList={'q':'','a':''}
 
     print(questionList)
-    #flash msg
+    #flash msg to be added...
     if form.validate_on_submit():
         print('enter flash')
         input_question = request.form['userQuestion']
@@ -47,8 +48,7 @@ def addQuestion():
         return redirect(url_for('home'))
     return render_template('addQuestion.html', title='Add Question', form=form)
 
-def dictToXML():
-    xml=open("demo2.xml")
+
 
 #allows running flask from python directly, doesnt require env vars
 #if __name__ == '__main__':
