@@ -40,22 +40,27 @@ def Main(): #demo / test
     root = ReadXML("temp.xml") #Step 1 read the xml
 
     count = GetQuestionCount(root) #Determine how many questions need to be read
+    print("How many questions: ")
     print(count)
 
-    #First Question
-    question = GetQuestion(0, root) #Get the first question
+    for x in range(0, count):
+        #First Question
+        print("\n")
+        question = GetQuestion(x, root) #Get the first question
 
-    type = GetQuestionType(question) #Get that questions type to determine what of the next functions apply and how to use them
-    print (type)
 
-    print("Question: " + GetQuestionsQuestion(question)) #Get the question text
+        type = GetQuestionType(question) #Get that questions type to determine what of the next functions apply and how to use them
+        print (type)
 
-    print("Options: ")#Get the options usage of options depends on type
-    options = GetOptions(question)
-    for option in options:
-        print(option)
+        print("Question: " + GetQuestionsQuestion(question)) #Get the question text
 
-    print("Answer: "+ GetAnswer(question))#Gets answer depends on type
+        print("Options: ")#Get the options usage of options depends on type
+        options = GetOptions(question)
+        for option in options:
+            print(option)
+
+        print("Answer: ")
+        print(GetAnswer(question))#Gets answer depends on type
 
 
 Main()
