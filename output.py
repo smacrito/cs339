@@ -29,7 +29,7 @@ def GetQuestionsQuestion(question):
 def GetOptions(question):
     options = []
     for option in question[1]:
-        options.add(option)
+        options.append(option.text)
     return options
 
 def GetAnswer(question):
@@ -39,9 +39,20 @@ def Main(): #demo / test
     root = ReadXML("temp.xml")
     count = GetQuestionCount(root)
     print(count)
+
     #First Question
     question = GetQuestion(0, root)
-    print("Question:" + GetQuestionsQuestion(question))
-    #print("Options:" +GetOptions(question))
+    #Typically would be some kinda logic to determine the question type
+    type = GetQuestionType(question)
+
+    print("Question: " + GetQuestionsQuestion(question))
+
+    print("Options: ")
+    options = GetOptions(question)
+    for option in options:
+        print(option)
+
+    print("Answer: "+ GetAnswer(question))
+
 
 Main()
