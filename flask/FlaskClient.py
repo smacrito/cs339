@@ -28,7 +28,6 @@ def addQuestion():
 
     form = addQuestionForm()
     questionList={'q':'','a':''}
-
     print(questionList)
 
     #flash msg to be added...
@@ -48,7 +47,7 @@ def addQuestion():
         return redirect(url_for('home'))
 
     return render_template('addQuestion.html', title='Add Question', form=form)
-    
+
 #Add multiple choice question and write to XML
 @app.route('/addMultipleChoice', methods=['GET','POST'])
 def addMultipleChoice():
