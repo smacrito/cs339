@@ -46,6 +46,7 @@ def Main(): #demo / test
     question = GetQuestion(0, root) #Get the first question
 
     type = GetQuestionType(question) #Get that questions type to determine what of the next functions apply and how to use them
+    print (type)
 
     print("Question: " + GetQuestionsQuestion(question)) #Get the question text
 
