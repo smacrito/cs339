@@ -1,10 +1,12 @@
-from flask import Flask, render_template, url_for, flash, redirect
+from flask import Flask, render_template, url_for, flash, redirect, request
 #passing class in from forms.py
 from forms import addQuestionForm
 #import xmltodict
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'test'
+
+
 
 
 #with open('C:/Users/Sammy/Desktop/School/COMP339/cs339/flask/demo2.xml') as fd:
@@ -26,10 +28,13 @@ def home():
 def addQuestion():
     form = addQuestionForm()
     #flash msg
-   # if form.validate_on_submit():
+    if form.validate_on_submit():
+        print('enter flash')
+        input_question = request.form['userQuestion']
+        print(input_question)
         #flash msg, pass in f to pass data
-        #flash(f'Question added: {form.question.data}.')
-        #return redirect(url_for('/home'))
+        flash(f'Question added: {form.userQuestion.data}.', 'success')
+        return redirect(url_for('home'))
     return render_template('addQuestion.html', title='Add Question', form=form)
 
 

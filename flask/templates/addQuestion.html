@@ -11,17 +11,24 @@
     <div>
         <form method="POST" action="">
             {{form.hidden_tag()}}
-            <fieldset>
-                <p>
-                    <label> Input Your Question</label>
-                    <input type="Text" id="myText" value="text" />
-                </p>
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Add a Question</legend>
+                <div class="form-group">
+                    {{form.userQuestion.label(class="form-control-label")}}
+                    {{form.userQuestion(class="form-control form-control-lg")}}
+                </div>
+                <div class="form-group">
+                    {{form.userAnswer.label(class="form-control-label")}}
+                    {{form.userAnswer(class="form-control form-control-lg")}}
+                </div>
             </fieldset>
+            <div class="form-group">
+                {{form.confirm(class="btn btn-outline-info")}}
+            </div>
         </form>
     </div>
-    <div>
 
-    </div>
+
 
 
 
