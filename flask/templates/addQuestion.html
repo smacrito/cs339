@@ -14,12 +14,12 @@
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Add a Question</legend>
                 <div class="form-group">
-                    {{form.userQuestion.label(class="form-control-label")}}
-                    {{form.userQuestion(class="form-control form-control-lg")}}
+                    {{form.questionin.label(class="form-control-label")}}
+                    {{form.questionin(class="form-control form-control-lg")}}
                 </div>
                 <div class="form-group">
-                    {{form.userAnswer.label(class="form-control-label")}}
-                    {{form.userAnswer(class="form-control form-control-lg")}}
+                    {{form.answerin.label(class="form-control-label")}}
+                    {{form.answerin(class="form-control form-control-lg")}}
                 </div>
             </fieldset>
             <div class="form-group">
@@ -27,33 +27,7 @@
             </div>
         </form>
     </div>
-
-
-
-
-
-
-    <!-- {% for question in questions%}
-		<h1>{{question.question}}</h1>
-		<p>{{ question.answer }}</p>
-	{% endfor %}
-</body>
-</html>
-<form method="POST" action="">
-    {{form.hidden_tag()}}
-    <div>
-        <legend>Add a Question</legend>
-    </div>
-    
-    <div>
-        {{form.userQuestion.label}}
-    </div>
-
-    <div>
-        {{form.userAnswer.label}}
-    </div>
-
-    <div>
-        {{form.confirm(class="btn")}}
-    </div>
-</form> -->
+    {% for question in questions%}
+    <h1>{{question.question}}</h1>
+    <p>{{ question.answer }}</p>
+    {% endfor %}

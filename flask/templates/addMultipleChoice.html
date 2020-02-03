@@ -1,0 +1,79 @@
+#add layout template
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <h1>Questionaire</h1>
+    <div>
+        <form method="POST" action="">
+            {{form.hidden_tag()}}
+            <fieldset>
+                <legend>Add a Question</legend>
+                <div>
+                    {{form.questionin.label}}
+                    {{form.questionin}}
+                </div>
+                <div>
+                    {{form.answerin.label}}
+                    {{form.answerin}}
+                </div>
+                <div>
+                    {{form.option1in.label}}
+                    {{form.option1in}}
+                </div>
+                <div>
+                    {{form.option2in.label}}
+                    {{form.option2in}}
+                </div>
+                <div>
+                    {{form.option3in.label}}
+                    {{form.option3in}}
+                </div>
+                <div>
+                    {{form.option4in.label}}
+                    {{form.option4in}}
+                </div>
+                <div>
+                    {{form.option5in.label}}
+                    {{form.option5in}}
+                </div>
+            </fieldset>
+            <div>
+                {{form.confirm}}
+            </div>
+        </form>
+    </div>
+
+
+
+
+
+
+    <!-- {% for question in questions%}
+		<h1>{{question.question}}</h1>
+		<p>{{ question.answer }}</p>
+	{% endfor %}
+</body>
+</html>
+<form method="POST" action="">
+    {{form.hidden_tag()}}
+    <div>
+        <legend>Add a Question</legend>
+    </div>
+    
+    <div>
+        {{form.questionin.label}}
+    </div>
+
+    <div>
+        {{form.answerin.label}}
+    </div>
+
+    <div>
+        {{form.confirm(class="btn")}}
+    </div>
+</form> -->
