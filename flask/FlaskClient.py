@@ -72,6 +72,29 @@ def addMultipleChoice():
         return redirect(url_for('home'))
     return render_template('addMultipleChoice.html', title='Add Question', form=form)
 
+@app.route('/submitAnsweer', methods=['GET','POST'])
+def addMultipleChoice():
+    data = initXML()
+    form = submitAnswerForm()
+
+    #flash msg to be added...
+    if form.validate_on_submit():
+        #rertrieve questions from user input 
+        questionin = request.form['questionin']
+        option1in = request.form['option1in']
+        option2in = request.form['option2in']
+        option3in = request.form['option3in']
+        option4in = request.form['option4in']
+        option5in = request.form['option5in']
+        answerin = request.form['answerin']
+        data = MultipleChoiceQuestion(data, questionin, option1in, option2in, option3in, option4in, option5in, answerin)
+        ExportToXML(data)
+
+        #flash msg, pass in f to pass data
+        flash(f'Question added: {form.questionin.data}.', 'success')
+        return redirect(url_for('home'))
+    return render_template('addMultipleChoice.html', title='Add Question', form=form)
+
 
 
 #allows running flask from python directly, doesnt require env vars

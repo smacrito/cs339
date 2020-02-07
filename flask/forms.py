@@ -11,4 +11,9 @@ class addQuestionForm(FlaskForm):                   #calling premade function to
     option4in = StringField('Option 4', validators=[DataRequired(), Length(min=1,max=500)])
     option5in = StringField('Option 5', validators=[DataRequired(), Length(min=1,max=500)])
     answerin = StringField('Answer', validators=[DataRequired(), Length(min=1,max=500)])
+    userAnswerin = StringField('Answer', validators=[DataRequired(), Length(min=1,max=500)])
     confirm = SubmitField('Add Question')
+
+class submitAnswerForm(FlaskForm):
+    userAnswerin = StringField('Answer', validators=[DataRequired(), Length(min=1,max=500)])
+    confirm = SubmitField('Submit Answer')

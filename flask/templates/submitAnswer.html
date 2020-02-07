@@ -1,0 +1,36 @@
+#add layout template
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>Questionaire</h1>
+    <div>
+        {% for question in questions%}
+        <h1>{{question.question}}</h1>
+        <p>{{ question.answer }}</p>
+        {% endfor %}
+    </div>
+
+    <div>
+        <form method="POST" action="">
+            {{form.hidden_tag()}}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Submit your Answer</legend>
+                <div class="form-group">
+                    {{form.userAnswerin.label(class="form-control-label")}}
+                    {{form.userAnswerin(class="form-control form-control-lg")}}
+                </div>
+                <div class="form-group">
+                    {{form.answerin.label(class="form-control-label")}}
+                    {{form.answerin(class="form-control form-control-lg")}}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{form.confirm(class="btn btn-outline-info")}}
+            </div>
+        </form>
+    </div>
+    {% for question in questions%}
+    <h1>{{question.question}}</h1>
+    <p>{{ question.answer }}</p>
+    {% endfor %}
