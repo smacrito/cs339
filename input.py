@@ -50,10 +50,12 @@ def ShortResponseQuestion(data, questionin):
     #Setup Tree
     ShortResponseQuestionType = ET.SubElement(data, 'ShortResponseQuestionType')
     question = ET.SubElement(ShortResponseQuestionType, 'question')
+    options = ET.SubElement(ShortResponseQuestionType, 'options') #Unused
     answer = ET.SubElement(ShortResponseQuestionType, 'answer')
 
     #Fill Values
     question.text = questionin
+    answer.text = ""
     #answer is reserved to be filled by user?
 
     return  data
@@ -61,9 +63,9 @@ def ShortResponseQuestion(data, questionin):
 def FillInTheBlankQuestion(data, part1in, part2in, answerin):
     #Setup Tree
     FillInTheBlankQuestionType = ET.SubElement(data, 'FillInTheBlankQuestionType')
-    parts = ET.SubElement(FillInTheBlankQuestionType,'parts')
-    part1 = ET.SubElement(parts, 'part')
-    part2 = ET.SubElement(parts, 'part')
+    options = ET.SubElement(FillInTheBlankQuestionType,'options') #Now follows same structure
+    part1 = ET.SubElement(options, 'option')  #First option is part 1
+    part2 = ET.SubElement(options, 'option')  #Second option is part 2
     answer = ET.SubElement(FillInTheBlankQuestionType,'answer')
 
     #Fill Values
