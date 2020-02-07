@@ -4,7 +4,7 @@ def initResponseXML():
     data = ET.Element('data')
     return data
 
-def response(reply):
+def response(data, reply):
     ResponseType = ET.SubElement(data, 'ResponseType')
     ResponseType.text = reply
     return data
@@ -13,3 +13,10 @@ def ExportToResponseXML (data):
     mydata = ET.tostring(data)
     myfile = open("temp-response.xml", "wb")
     myfile.write(mydata)
+
+def Main():
+    data=initResponseXML()
+    response(data, "Q1")
+    response(data, "Q2")
+    ExportToResponseXML(data)
+Main()
