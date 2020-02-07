@@ -14,3 +14,11 @@ def GetResponseCount(root):
 def GetResponse(number, root):
     response = root[number].text
     return response
+
+def Main():
+    root = ReadResponseXML("temp-response.xml")
+    count = GetResponseCount(root)
+    for x in range(0 , count):
+        print(GetResponse(x, root))
+
+Main()
