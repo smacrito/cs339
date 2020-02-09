@@ -37,3 +37,19 @@
  - submitAnswer displays submitting an answer via user input to temp-response.xml
  - checkAnswer displays parsing both XML files and passing them to html with flask
 
+## Files
+
+input.py
+initXML() : Initalized the ElementTree ( ET )
+MultipleChoiceQuestion(...) : Takes Multiple Choice Type and places in ET
+TrueFalseQuestion(...) : Takes T/F Type and places in ET
+ShortResponseQuestion(...) : Takes Short Response Type and places in ET
+FillInTheBlankQuestion(...) : Takes FiTB Type and places in ET
+ExportToXML(data) : Prints ET as XML
+
+output.py
+
+
+response.py
+
+readresponse.py
