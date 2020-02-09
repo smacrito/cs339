@@ -22,9 +22,14 @@
 
     set FLASK_APP=FlaskClient.py
 	
+    or
+
+    export FLASK_APP=FlaskClient.py
+
 	Then, we may now run
 	
     flask run
+
 4) In a browser of your choice, navigate to *127.0.0.1:5000/addMultipleChoice*
 5) Here, you can run through the prompts.
 
