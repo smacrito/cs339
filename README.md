@@ -46,10 +46,26 @@ TrueFalseQuestion(...) : Takes T/F Type and places in ET
 ShortResponseQuestion(...) : Takes Short Response Type and places in ET
 FillInTheBlankQuestion(...) : Takes FiTB Type and places in ET
 ExportToXML(data) : Prints ET as XML
+Main() : Testing function
 
 output.py
-
+ReadXML(path) : Opens XML and finds ROOT
+GetQuestionCount(root) : Returns number of Questions
+GetQuestion(number, root) : Returns question object at number index
+GetQuestionType(question) : Returns type of question obj
+GetQuestionQuestion(question) : Returns question text
+GetOptions(question) : Returns list of options. Usage: all choices in a multi choice question
+GetAnswer(question) : Returns answer text
+Main(): Testing function
 
 response.py
+initResponseXML() : Initalized the ElementTree ( ET )
+response(data,userAnswerin) : Takes response and places in ET
+ExportToResponseXML(data) : Prints ET as XML
+Main() : Testing function
 
 readresponse.py
+ReadResponseXML(path) : Opens XML and finds ROOT
+GetResponseCount(root) : Returns number of Responses
+GetResponse(number,root) : Returns response text at number index
+Main() : Testing function
