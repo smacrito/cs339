@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+</head>
+
+<body>
+	<h1>Questionaire</h1>
+
+	{% for question in questions%}
+	<h1>{{question.question}}</h1>
+	<p>{{ question.answer }}</p>
+	{% endfor %}
+</body>
+
+</html>

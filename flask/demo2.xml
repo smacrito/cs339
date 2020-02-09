@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<data>
-	<question number='1'>
-		<qText> "What is XML?" </qText>
-	</question>
-	<question number='2'>
-		<qText> "What is a schema?" </qText>
-	</question>
-</data>

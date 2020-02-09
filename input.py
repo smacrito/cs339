@@ -20,7 +20,7 @@ def MultipleChoiceQuestion(data, questionin, option1in, option2in, option3in, op
 
     #Fill values
     question.text = questionin
-    option1.text = option1in
+    option1.text = answerin
     option2.text = option2in
     option3.text = option3in
     option4.text = option4in
@@ -89,4 +89,4 @@ def Main():
     data = ShortResponseQuestion(data, "Question")
     ExportToXML(data)
 
-Main()
+#Main()
