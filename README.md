@@ -17,7 +17,7 @@
 	Then, we may now run
 	
     flask run
-4) In a browser of your choice, navigate to *127.0.0.1:5000/AddMultipleChoice*
+4) In a browser of your choice, navigate to *127.0.0.1:5000/addMultipleChoice*
 5) Here, you can run through the prompts.
 
  - addMultipleChoice displays adding a question via user input to temp.xml
