@@ -6,6 +6,7 @@
 	
 
     pip install flask
+    
     pip install flask-wtf
 
 2) To run our program, cd into the directory that holds "FlaskClient.py" using terminal or command prompt. 
