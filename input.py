@@ -6,7 +6,7 @@ def initXML():
     return data
 
 #Then the user will set as many questions as they like using these methods
-def MultipleChoiceQuestion(data, questionin, answerin, option2in, option3in, option4in, option5in, answerin):
+def MultipleChoiceQuestion(data, questionin, option1in, option2in, option3in, option4in, option5in, answerin):
     #Set up tree
     MultipleChoiceQuestionType = ET.SubElement(data, 'MultipleChoiceQuestionType')
     question = ET.SubElement(MultipleChoiceQuestionType,'question')
@@ -89,4 +89,4 @@ def Main():
     data = ShortResponseQuestion(data, "Question")
     ExportToXML(data)
 
-Main()
+#Main()

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+</head>
+
+<body>
+    
+    <h1>Questionaire</h1>
+    <div>
+        <h1>Question: </h1>
+        <p>{{questionText}}</p>
+    </div>
+
+    <div>
+        <h1>Options: </h1>
+        {% for options in options%}
+        <p>{{options}}</p>
+        {% endfor %}
+    </div>
+
+    <div>
+        <h1>Correct Answer: </h1>
+        <p>{{answer}}</p>
+    </div>
+ 
+    <div>
+        <h1>User Answer: </h1>
+        <p> {{userAnswer}} </p>
+    </div>
+    
+
+</body>
+
+</html>

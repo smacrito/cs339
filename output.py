@@ -63,4 +63,4 @@ def Main(): #demo / test
         print(GetAnswer(question))#Gets answer depends on type
 
 
-Main()
+#Main()
