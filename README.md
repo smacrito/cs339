@@ -5,13 +5,17 @@
 ## Setting up Flask
 
 1) First we must install flask and flaskwtf
-	
+
+
+    pip install -r requirements.txt
+
+    >If this fails you may have to install the packages manually:	
 
     pip install flask
     
     pip install flask-wtf
 
-1.5) Note you may need to use pip3
+    >Note you may need to use pip3:
 
     pip3 install flask
 
@@ -20,11 +24,13 @@
 2) To run our program, cd into the directory that holds "FlaskClient.py" using terminal or command prompt. 
 3) Now, we must set our Flask_App in terminal or command prompt, which can be done through program execution as well, but is not set up that way currently, as this is a demo of base functionality.
 
-    set FLASK_APP=FlaskClient.py
-	
-    or
+    Depending on OS:
 
     export FLASK_APP=FlaskClient.py
+
+    or
+
+    set FLASK_APP=FlaskClient.py
 
 	Then, we may now run
 	
