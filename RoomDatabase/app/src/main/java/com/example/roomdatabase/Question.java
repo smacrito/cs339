@@ -17,8 +17,13 @@ public class Question {
     private String question;
     @ColumnInfo(name="answer1")
     private String answer1;
+    @ColumnInfo(name="answer2")
+    private String answer2;
+    @ColumnInfo(name="correctAnswer")
+    private String correctAnswer;
 
-//getter and setter methods for variables
+
+    //getter and setter methods for variables
     public int getQuestionID() {
         return questionID;
     }
@@ -42,4 +47,17 @@ public class Question {
     public void setAnswer1(String answer1) {
         this.answer1 = answer1;
     }
+    public String getAnswer2() {
+        return answer2;
+    }
+    public void setAnswer2(String answer2) {
+        this.answer2 = answer2;
+    }
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
+    public void setCorrectAnswer(String correctAnswer) {
+        this.correctAnswer = correctAnswer;
+    }
+
 }
