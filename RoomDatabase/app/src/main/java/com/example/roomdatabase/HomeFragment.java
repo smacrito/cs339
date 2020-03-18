@@ -16,7 +16,7 @@ import android.widget.Button;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
-    private Button addQuestionButton;
+    private Button addQuestionButton, viewQuestionButton;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -28,17 +28,26 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+        //set buttons to button id to reference them
         addQuestionButton = view.findViewById(R.id.add_question_button);
-        //register listener for button
+        viewQuestionButton = view.findViewById(R.id.view_question_button);
+
+        //register listener for buttons
         addQuestionButton.setOnClickListener(this);
+        viewQuestionButton.setOnClickListener(this);
         return view;
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            //ADD QUESTION CASE
             case R.id.add_question_button:
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddQuestionFragment()).addToBackStack(null).commit();
+                break;
+            //VIEW QUESTION CASE
+            case R.id.view_question_button:
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new ReadQuestionFragment()).addToBackStack(null).commit();
                 break;
 
 
