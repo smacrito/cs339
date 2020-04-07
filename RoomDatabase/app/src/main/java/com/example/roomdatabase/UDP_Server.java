@@ -1,7 +1,11 @@
-//From https://stackoverflow.com/questions/19540715/send-and-receive-data-on-udp-socket-java-android
+package com.example.roomdatabase;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.net.SocketException;
+import java.net.*;
+import java.io.*;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -9,57 +13,26 @@ import android.os.Build;
 
 public class UDP_Server
 {
-    private AsyncTask<Void, Void, Void> async;
-    private boolean Server_active = true;
-
-    @SuppressLint("NewApi")
-    public void runUdpServer()
-    {
-        async = new AsyncTask<Void, Void, Void>()
+    boolean run = true;
+    public void runserver() throws IOException {
+        run = true;
+        DatagramSocket serverSocket = new DatagramSocket(9876);
+        byte[] receiveData = new byte[1024];
+        byte[] sendData = new byte[1024];
+        while(run)
         {
-            @Override
-            protected Void doInBackground(Void... params)
-            {
-                byte[] lMsg = new byte[4096];
-                DatagramPacket dp = new DatagramPacket(lMsg, lMsg.length);
-                DatagramSocket ds = null;
-
-                try
-                {
-                    ds = new DatagramSocket(Main.SERVER_PORT);
-
-                    while(Server_active)
-                    {
-                        ds.receive(dp);
-
-                        Intent i = new Intent();
-                        i.setAction(Main.MESSAGE_RECEIVED);
-                        i.putExtra(Main.MESSAGE_STRING, new String(lMsg, 0, dp.getLength()));
-                        Main.MainContext.getApplicationContext().sendBroadcast(i);
-                    }
-                }
-                catch (Exception e)
-                {
-                    e.printStackTrace();
-                }
-                finally
-                {
-                    if (ds != null)
-                    {
-                        ds.close();
-                    }
-                }
-
-                return null;
-            }
-        };
-
-        if (Build.VERSION.SDK_INT >= 11) async.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
-        else async.execute();
+            DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            serverSocket.receive(receivePacket);
+            String sentence = new String( receivePacket.getData());
+            InetAddress IPAddress = receivePacket.getAddress();
+            int port = receivePacket.getPort();
+            String capitalizedSentence = sentence.toUpperCase();
+            sendData = capitalizedSentence.getBytes();
+            DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
+            serverSocket.send(sendPacket);
+        }
     }
-
-    public void stop_UDP_Server()
-    {
-        Server_active = false;
+    public void stopserver(){
+        run = false;
     }
 }
