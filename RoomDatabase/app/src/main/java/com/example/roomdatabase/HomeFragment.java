@@ -16,7 +16,9 @@ import android.widget.Button;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
-    private Button addQuestionButton, viewQuestionButton;
+    private Button addQuestionButton, viewQuestionButton, startServerButton;
+    UDP_Server udp = new UDP_Server();
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -31,15 +33,18 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         //set buttons to button id to reference them
         addQuestionButton = view.findViewById(R.id.add_question_button);
         viewQuestionButton = view.findViewById(R.id.view_question_button);
+        startServerButton = view.findViewById(R.id.start_server_button);
 
         //register listener for buttons
         addQuestionButton.setOnClickListener(this);
         viewQuestionButton.setOnClickListener(this);
+        startServerButton.setOnClickListener(this);
+
         return view;
     }
 
     @Override
-    public void onClick(View v) {
+    public void onClick(View v){
         switch (v.getId()){
             //ADD QUESTION CASE
             case R.id.add_question_button:
@@ -49,6 +54,17 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.view_question_button:
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new ReadQuestionFragment()).addToBackStack(null).commit();
                 break;
+            case R.id.start_server_button:
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new StartServerFragment()).addToBackStack(null).commit();
+                try{
+                    udp.runserver();
+                    System.out.println("wtf");
+                }
+                catch(Exception E){
+                    System.out.println("E start");
+                    System.out.println(E);
+                    System.out.println("E done");
+                }
 
 
         }

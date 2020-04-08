@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey;
 //entity is a table in room.
 @Entity(tableName = "QuestionsTable") // set primary key to relate to primary key of answers in different table
 public class Question {
-
+//TODO: add auto increment for primary key
     // every class must have 1 primary key
     @PrimaryKey
     private int questionID;

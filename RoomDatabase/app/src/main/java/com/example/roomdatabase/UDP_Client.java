@@ -24,7 +24,7 @@ public class UDP_Client {
         DatagramPacket receivePacket=new DatagramPacket(receiveData,receiveData.length);
         clientSocket.receive(receivePacket);
         String modifiedSentence=new String(receivePacket.getData());
-        //System.out.println("FROM SERVER:"+modifiedSentence);
+        System.out.println("FROM SERVER:"+modifiedSentence);
         clientSocket.close();
     }
 }
