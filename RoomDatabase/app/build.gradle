@@ -32,6 +32,9 @@ dependencies {
     implementation "androidx.room:room-rxjava2:$room_version"
     // optional - Guava support for Room, including Optional and ListenableFuture
     implementation "androidx.room:room-guava:$room_version"
+
+    implementation "com.google.code.gson:gson:2.8.6"
+
     // Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
 
