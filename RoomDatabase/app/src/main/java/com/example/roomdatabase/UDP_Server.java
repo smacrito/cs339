@@ -10,14 +10,20 @@ import java.io.*;
 
 
 
-class UDP_Server implements Runnable{
+class UDP_Server extends AsyncTask<Void, Void, Void> {
 
-    private int var;
     boolean run = true;
 
-    public UDP_Server (int var){
-        this.var=var;
+    protected Void doInBackground(Void... params){
+        try {
+            runServer();
+        }
+        catch(Exception E){
+            System.out.println(E);
+        }
+        return null;
     }
+
 
     public void runServer() throws IOException {
         run = true;
@@ -44,15 +50,5 @@ class UDP_Server implements Runnable{
         run = false;
     }
 
-    @Override
-    public void run(){
-        try{
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-            runServer();
-        }
-        catch(Exception E){
-            System.out.println(E);
-        }
-    }
+
 }

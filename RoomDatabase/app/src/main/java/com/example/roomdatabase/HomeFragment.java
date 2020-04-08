@@ -16,8 +16,9 @@ import android.widget.Button;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
-    private Button addQuestionButton, viewQuestionButton, startServerButton;
-    UDP_Server udp = new UDP_Server(10);
+    private Button addQuestionButton, viewQuestionButton, startServerButton, sendDataButton;
+    UDP_Server udp = new UDP_Server();
+    UDP_Client udpClient = new UDP_Client();
 
 
     public HomeFragment() {
@@ -34,11 +35,13 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         addQuestionButton = view.findViewById(R.id.add_question_button);
         viewQuestionButton = view.findViewById(R.id.view_question_button);
         startServerButton = view.findViewById(R.id.start_server_button);
+        sendDataButton = view.findViewById(R.id.send_data_button);
 
         //register listener for buttons
         addQuestionButton.setOnClickListener(this);
         viewQuestionButton.setOnClickListener(this);
         startServerButton.setOnClickListener(this);
+        sendDataButton.setOnClickListener(this);
 
         return view;
     }
@@ -57,7 +60,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.start_server_button:
                 //MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new StartServerFragment()).addToBackStack(null).commit();
                 try{
-                    udp.run();
+                    udp.execute();
                     break;
 
                 }
@@ -74,6 +77,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                     System.out.println("Stop Server error start");
                     System.out.println(E);
                     System.out.println("Stop Server error stop");
+                }
+            case R.id.send_data_button:
+                try{
+                    System.out.println("send_data_button clicked");
+                    System.out.println(udpClient.client_helloworld());
+                }
+                catch(Exception E){
+                    System.out.println(E);
                 }
 
 
