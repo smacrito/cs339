@@ -48,6 +48,13 @@
             android:layout_gravity="center"
             android:text="Start Server" />
 
+        <Button
+            android:id="@+id/stop_server_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Stop Server" />
+
     </LinearLayout>
 
 </FrameLayout>

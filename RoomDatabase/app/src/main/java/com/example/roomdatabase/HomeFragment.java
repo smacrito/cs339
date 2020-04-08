@@ -17,7 +17,7 @@ import android.widget.Button;
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private Button addQuestionButton, viewQuestionButton, startServerButton;
-    UDP_Server udp = new UDP_Server();
+    UDP_Server udp = new UDP_Server(10);
 
 
     public HomeFragment() {
@@ -55,16 +55,25 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new ReadQuestionFragment()).addToBackStack(null).commit();
                 break;
             case R.id.start_server_button:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new StartServerFragment()).addToBackStack(null).commit();
+                //MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new StartServerFragment()).addToBackStack(null).commit();
                 try{
-                    udp.start();
-                    udp.runserver();
-                    System.out.println("wtf");
+                    udp.run();
+                    break;
+
                 }
                 catch(Exception E){
-                    System.out.println("E start");
+                    System.out.println("Start server error start");
                     System.out.println(E);
-                    System.out.println("E done");
+                    System.out.println("Start Server error stop");
+                }
+            case R.id.stop_server_button:
+                try{
+                    udp.stopServer();
+                }
+                catch(Exception E){
+                    System.out.println("Stop Server error start");
+                    System.out.println(E);
+                    System.out.println("Stop Server error stop");
                 }
 
 
