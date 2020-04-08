@@ -7,7 +7,7 @@ import java.io.*;
 
 
 
-public class UDP_Server
+public class UDP_Server extends Thread
 {
 
     public void runserver() throws IOException {

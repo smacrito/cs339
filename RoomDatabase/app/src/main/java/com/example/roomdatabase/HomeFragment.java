@@ -57,6 +57,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.start_server_button:
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new StartServerFragment()).addToBackStack(null).commit();
                 try{
+                    udp.start();
                     udp.runserver();
                     System.out.println("wtf");
                 }
