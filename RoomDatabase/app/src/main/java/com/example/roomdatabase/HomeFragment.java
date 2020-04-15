@@ -74,6 +74,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.stop_server_button:
                 try{
                     udp.stopServer();
+                    break;
                 }
                 catch(Exception E){
                     System.out.println("Stop Server error start");
@@ -84,6 +85,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 try{
                     System.out.println("get_data_button clicked");
                     System.out.println(udpClient.clientGet());
+                    break;
                 }
                 catch(Exception E){
                     System.out.println(E);
@@ -92,6 +94,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
                 try{
                     System.out.println("send_data_button clicked");
                     udpClient.clientSend();
+                    break;
                 }
                 catch(Exception E){
                     System.out.println(E);
