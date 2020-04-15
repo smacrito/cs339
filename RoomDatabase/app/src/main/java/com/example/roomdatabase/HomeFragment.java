@@ -16,7 +16,7 @@ import android.widget.Button;
  */
 public class HomeFragment extends Fragment implements View.OnClickListener{
 
-    private Button addQuestionButton, viewQuestionButton, startServerButton, sendDataButton;
+    private Button addQuestionButton, viewQuestionButton, startServerButton, sendDataButton, getDataButton;
     UDP_Server udp = new UDP_Server();
     UDP_Client udpClient = new UDP_Client();
 
@@ -36,12 +36,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         viewQuestionButton = view.findViewById(R.id.view_question_button);
         startServerButton = view.findViewById(R.id.start_server_button);
         sendDataButton = view.findViewById(R.id.send_data_button);
+        getDataButton = view.findViewById(R.id.get_data_button);
 
         //register listener for buttons
         addQuestionButton.setOnClickListener(this);
         viewQuestionButton.setOnClickListener(this);
         startServerButton.setOnClickListener(this);
         sendDataButton.setOnClickListener(this);
+        getDataButton.setOnClickListener(this);
 
         return view;
     }
@@ -81,7 +83,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.send_data_button:
                 try{
                     System.out.println("send_data_button clicked");
-                    System.out.println(udpClient.client_helloworld());
+                    udpClient.clientSend();
+                }
+                catch(Exception E){
+                    System.out.println(E);
+                }
+
+            case R.id.get_data_button:
+                try{
+                    System.out.println("get_data_button clicked");
+                    System.out.println(udpClient.clientGet());
                 }
                 catch(Exception E){
                     System.out.println(E);
