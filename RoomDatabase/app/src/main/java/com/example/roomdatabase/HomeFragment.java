@@ -84,7 +84,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
             case R.id.get_data_button:
                 try{
                     System.out.println("get_data_button clicked");
-                    udpClient.doInBackground();
+                    udpClient.execute();
                     break;
                 }
                 catch(Exception E){
