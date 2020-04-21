@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             //adds fragment to container            specify container           specify fragment
-            fragmentManager.beginTransaction().add(R.id.fragment_container,new HomeFragment()).commit();
+            fragmentManager.beginTransaction().add(R.id.fragment_container,new ClientOrHostFragment()).commit();
         }
     }
 }
