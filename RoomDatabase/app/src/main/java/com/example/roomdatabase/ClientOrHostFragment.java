@@ -47,7 +47,7 @@ public class ClientOrHostFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View v){
         switch (v.getId()){
-            //ADD QUESTION CASE
+            //Select client case
             case R.id.select_client_button:
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddQuestionFragment()).addToBackStack(null).commit();
                 break;
