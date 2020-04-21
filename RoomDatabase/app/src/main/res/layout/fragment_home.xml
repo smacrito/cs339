@@ -11,7 +11,6 @@
         android:orientation="vertical">
 
 
-
         <Button
             android:id="@+id/add_question_button"
             android:layout_width="wrap_content"
@@ -19,6 +18,7 @@
             android:layout_gravity="center"
             android:text="Add_Question"
             />
+
         <Button
             android:id="@+id/view_question_button"
             android:layout_width="wrap_content"
@@ -26,6 +26,17 @@
             android:layout_gravity="center"
             android:text="View_Question"
             />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address" />
+        <TextView
+            android:id="@+id/port"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Port" />
 
 
     </LinearLayout>
