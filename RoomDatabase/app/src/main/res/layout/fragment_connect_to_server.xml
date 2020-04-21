@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".answerQuestionFragment">
+    tools:context=".connectToServerFragment">
 
     <LinearLayout
         android:gravity="center"
@@ -13,23 +13,23 @@
 
 
         <TextView
-            android:id="@+id/AddAQuestionText"
+            android:id="@+id/ConnectToServerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Answer a Question"
+            android:text="Enter server details:"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 
         <EditText
-            android:id="@+id/questionID_textbox"
+            android:id="@+id/inet_textbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="question number" />
+            android:text="inet IP" />
 
         <EditText
-            android:id="@+id/answer_textbox"
+            android:id="@+id/port_textbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -38,7 +38,7 @@
 
 
         <Button
-            android:id="@+id/submit_answer_button"
+            android:id="@+id/submit_ip_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit" />

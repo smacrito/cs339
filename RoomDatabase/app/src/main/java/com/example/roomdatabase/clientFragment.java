@@ -28,7 +28,7 @@ public class clientFragment extends Fragment implements View.OnClickListener{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_client, container, false);
         //set buttons to button id to reference them
         answerQuestionButton = view.findViewById(R.id.answer_question_button);
         viewQuestionButton = view.findViewById(R.id.view_question_button);

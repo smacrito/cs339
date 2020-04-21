@@ -34,8 +34,8 @@ public class Startup {
         //return address
     }
 
-    public void joinMeeting(String input, int port) throws UnknownHostException {
-        this.address=input;
+    public void joinMeeting(String address, int port) throws UnknownHostException {
+        this.address=address;
         this.port = port;
         //Start running UDP_Client
         //Schedule this

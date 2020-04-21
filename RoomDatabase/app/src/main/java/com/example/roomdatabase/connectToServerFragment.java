@@ -16,13 +16,13 @@ import android.widget.Toast;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class answerQuestionFragment extends Fragment {
+public class connectToServerFragment extends Fragment {
 
-    private EditText questionID,userAnswer;
+    private EditText inetAddress,port;
     private Button submitButton;
+    Startup startup = new Startup();
 
-
-    public answerQuestionFragment() {
+    public connectToServerFragment() {
         // Required empty public constructor
     }
 
@@ -35,25 +35,32 @@ public class answerQuestionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_answer_question,container, false);
 
         //retrieve data from text boxes
-        questionID = view.findViewById(R.id.questionID_textbox);
-        userAnswer = view.findViewById(R.id.answer_textbox);
-        submitButton = view.findViewById(R.id.submit_answer_button);
+        inetAddress = view.findViewById(R.id.inet_textbox);
+        port = view.findViewById(R.id.port_textbox);
 
         submitButton.setOnClickListener(new View.OnClickListener(){
             //set data to variables
             @Override
             public void onClick(View view){
-                int question_id = Integer.parseInt(questionID.getText().toString());
-                String userInput = userAnswer.getText().toString();
+                String userInetAddress = inetAddress.getText().toString();
+                int userPort = Integer.parseInt(port.getText().toString());
+
+                try{
+                    startup.joinMeeting(userInetAddress,userPort);
+
+                }
+                catch(Exception E){
+                    System.out.println(E);
+                }
 
 
-                Toast.makeText(getActivity(),"Answer added", Toast.LENGTH_SHORT);
+                Toast.makeText(getActivity(),"Server added", Toast.LENGTH_SHORT);
 
-                questionID.setText("");
+                inetAddress.setText("");
+                port.setText("");
 
             }
         });
-
 
         return view;
     }

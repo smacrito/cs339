@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         //set buttons to button id to reference them
         addQuestionButton = view.findViewById(R.id.add_question_button);
         viewQuestionButton = view.findViewById(R.id.view_question_button);
-
+        Textaddress = view.findViewById(R.id.)
 
         //register listener for buttons
         addQuestionButton.setOnClickListener(this);

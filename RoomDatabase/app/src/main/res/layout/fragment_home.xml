@@ -13,12 +13,13 @@
 
 
         <Button
-            android:id="@+id/add_question_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Add_Question"
-            />
+        android:id="@+id/add_question_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Add_Question"
+        />
+
         <Button
             android:id="@+id/view_question_button"
             android:layout_width="wrap_content"
