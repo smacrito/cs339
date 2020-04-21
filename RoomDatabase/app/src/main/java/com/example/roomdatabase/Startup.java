@@ -2,6 +2,8 @@ package com.example.roomdatabase;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Startup {
     private static InetAddress address; //Will match port for UDP_Client
@@ -38,8 +40,14 @@ public class Startup {
         //Start running UDP_Client
         //Schedule this
 
-        
-        udpClient.execute(); //udp getter
+        Timer t = new Timer();
+        t.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                udpClient.execute(); //udp getter
+            }
+        }, 0, 15000);
+
 
         //udp sender to go at the end of each question submission
         /*
