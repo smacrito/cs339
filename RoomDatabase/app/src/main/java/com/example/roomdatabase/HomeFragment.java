@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -18,6 +19,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private Button addQuestionButton, viewQuestionButton;
 
+    private TextView Textaddress;
+    private TextView Textport;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -37,7 +40,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         //register listener for buttons
         addQuestionButton.setOnClickListener(this);
         viewQuestionButton.setOnClickListener(this);
-
+        Textaddress.setText(Startup.getAddress());
+        Textport.setText(Startup.getPort());
 
         return view;
     }
