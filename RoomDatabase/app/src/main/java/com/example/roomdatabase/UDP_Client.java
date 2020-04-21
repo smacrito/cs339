@@ -45,7 +45,7 @@ public class UDP_Client extends AsyncTask<Void,Void,Void>{
 
         sendData=questionToJSON.getBytes();
 
-        DatagramPacket sendPacket=new DatagramPacket(sendData,sendData.length,IPAddress,9876);
+        DatagramPacket sendPacket=new DatagramPacket(sendData,sendData.length,IPAddress, Startup.getPort());
         clientSocket.send(sendPacket);
         DatagramPacket receivePacket=new DatagramPacket(receiveData,receiveData.length);
         clientSocket.receive(receivePacket);
@@ -61,7 +61,7 @@ public class UDP_Client extends AsyncTask<Void,Void,Void>{
         //BufferedReader inFromUser=new BufferedReader(new InputStreamReader(System.in));
 
         DatagramSocket clientSocket=new DatagramSocket();
-        InetAddress IPAddress=InetAddress.getByName("localhost");
+        InetAddress IPAddress= Startup.getAddress();
 
         byte[]sendData=new byte[1024];
 
@@ -72,7 +72,7 @@ public class UDP_Client extends AsyncTask<Void,Void,Void>{
 
         sendData=questionToJSON.getBytes();
 
-        DatagramPacket sendPacket=new DatagramPacket(sendData,sendData.length,IPAddress,9876);
+        DatagramPacket sendPacket=new DatagramPacket(sendData,sendData.length,IPAddress,Startup.getPort());
         clientSocket.send(sendPacket);
         return 0;
     }
