@@ -61,7 +61,7 @@ public class UDP_Client extends AsyncTask<Void,Void,Void>{
         //BufferedReader inFromUser=new BufferedReader(new InputStreamReader(System.in));
 
         DatagramSocket clientSocket=new DatagramSocket();
-        InetAddress IPAddress= Startup.getAddress();
+        InetAddress IPAddress= InetAddress.getByName(Startup.getAddress());
 
         byte[]sendData=new byte[1024];
 

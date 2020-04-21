@@ -6,13 +6,13 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Startup {
-    private static InetAddress address; //Will match port for UDP_Client
+    private static String address; //Will match port for UDP_Client
     private static int port;
 
     UDP_Server udp = new UDP_Server();
     UDP_Client udpClient = new UDP_Client();
 
-    public static InetAddress getAddress() {
+    public static String getAddress() {
         return address;
     }
 
@@ -22,7 +22,8 @@ public class Startup {
 
     public void host() throws UnknownHostException {
         //generate address
-        InetAddress IPAddress=InetAddress.getByName("localhost");
+        //InetAddress IPAddress=InetAddress.getByName("localhost");
+        String IPAddress = "localhost";
         address = IPAddress;
         //Generate port
         port = 9876;
@@ -34,8 +35,7 @@ public class Startup {
     }
 
     public void joinMeeting(String input, int port) throws UnknownHostException {
-        InetAddress address = InetAddress.getByName(input);
-        this.address=address;
+        this.address=input;
         this.port = port;
         //Start running UDP_Client
         //Schedule this
