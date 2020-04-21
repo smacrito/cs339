@@ -17,8 +17,7 @@ import android.widget.Button;
 public class ClientOrHostFragment extends Fragment implements View.OnClickListener{
 
     private Button clientButton, hostButton;
-    UDP_Server udp = new UDP_Server();
-    UDP_Client udpClient = new UDP_Client();
+    Startup startup = new Startup();
 
 
     public ClientOrHostFragment() {
@@ -51,10 +50,23 @@ public class ClientOrHostFragment extends Fragment implements View.OnClickListen
             case R.id.select_client_button:
                 MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new AddQuestionFragment()).addToBackStack(null).commit();
                 break;
-            //VIEW QUESTION CASE
+
+            //Select host case
             case R.id.select_host_button:
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new HomeFragment()).addToBackStack(null).commit();
-                break;
+                //Start server
+                try{
+                    startup.host();
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container,new HomeFragment()).addToBackStack(null).commit();
+                    break;
+                }
+                catch(Exception E){
+                    System.out.println("Start server error start");
+                    System.out.println(E);
+                    System.out.println("Start Server error stop");
+                }
+                //Start hostfragment(homefragment)
+
+
 
 
         }
