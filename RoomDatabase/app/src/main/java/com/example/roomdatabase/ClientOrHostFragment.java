@@ -48,8 +48,7 @@ public class ClientOrHostFragment extends Fragment implements View.OnClickListen
         switch (v.getId()){
             //Select client case
             case R.id.select_client_button:
-                
-                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new answerQuestionFragment()).addToBackStack(null).commit();
+                MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new connectToServerFragment()).addToBackStack(null).commit();
                 break;
 
             //Select host case

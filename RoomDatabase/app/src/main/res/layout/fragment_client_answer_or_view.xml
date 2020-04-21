@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".connectToServerFragment">
-
+    tools:context=".clientAnswerOrViewFragment">
     <LinearLayout
         android:gravity="center"
         android:layout_width="match_parent"
@@ -12,37 +11,34 @@
         android:orientation="vertical">
 
 
-        <TextView
-            android:id="@+id/ConnectToServerText"
+        <Button
+            android:id="@+id/view_question_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Enter server details:"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-        <EditText
-            android:id="@+id/inet_textbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="inet IP" />
-
-        <EditText
-            android:id="@+id/port_textbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Answer" />
-
+            android:text="View Question"
+            />
 
         <Button
-            android:id="@+id/submit_inet_button"
+            android:id="@+id/answer_question_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Submit" />
+            android:layout_gravity="center"
+            android:text="Answer Question"
+            />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="locslhost" />
+        <TextView
+            android:id="@+id/port"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9876" />
 
 
     </LinearLayout>
+
 </FrameLayout>

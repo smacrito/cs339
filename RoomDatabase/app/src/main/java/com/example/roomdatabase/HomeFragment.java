@@ -19,8 +19,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
     private Button addQuestionButton, viewQuestionButton;
 
-    private TextView Textaddress;
-    private TextView Textport;
+    private TextView textAddress;
+    private TextView textPort;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -35,13 +35,16 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         //set buttons to button id to reference them
         addQuestionButton = view.findViewById(R.id.add_question_button);
         viewQuestionButton = view.findViewById(R.id.view_question_button);
-        Textaddress = view.findViewById(R.id.)
+        textAddress = view.findViewById(R.id.address);
+        textPort = view.findViewById(R.id.port);
+
+
+        textAddress.setText("localhost");
+        textPort.setText("9876");
 
         //register listener for buttons
         addQuestionButton.setOnClickListener(this);
         viewQuestionButton.setOnClickListener(this);
-        Textaddress.setText(Startup.getAddress());
-        Textport.setText(Startup.getPort());
 
         return view;
     }

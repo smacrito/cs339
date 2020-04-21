@@ -32,7 +32,7 @@ public class connectToServerFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_answer_question,container, false);
+        View view = inflater.inflate(R.layout.fragment_connect_to_server,container, false);
 
         //retrieve data from text boxes
         inetAddress = view.findViewById(R.id.inet_textbox);
@@ -47,6 +47,7 @@ public class connectToServerFragment extends Fragment {
 
                 try{
                     startup.joinMeeting(userInetAddress,userPort);
+                    MainActivity.fragmentManager.beginTransaction().replace(R.id.fragment_container, new clientAnswerOrViewFragment()).addToBackStack(null).commit();
 
                 }
                 catch(Exception E){
