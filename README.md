@@ -6,6 +6,10 @@ We suggest running from within android studio, since it allows you to run the co
 The app you want to load is Roomdatabase>app
 
 ## Demo
+Here are our slides: https://docs.google.com/presentation/d/1PEvtOm7MdDWw0wZ8hxj3KQgUCTPTzp5ySfDxwX6GiLw/edit?usp=sharing
+
+Here is a video demo:https://www.youtube.com/watch?v=HB3KCG0ll6g
+
 One you get the app open here are the instructions on how to see the full feature set running on a single device.
 
 If at any point you get a "ROOMDATABASE ERROR" please uninstall the app and relaunch
@@ -28,11 +32,6 @@ Now hit BACK to the Client selection screen
 
 Select CLIENT
 
+Enter the address and port from before (For VM: localhost 9876) 
 
-
-
-
-
-## Files
-
-
+You can then VIEW QUESTIONS or ANSWER QUESTIONS
