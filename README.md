@@ -17,6 +17,7 @@ Here is a video demo:https://www.youtube.com/watch?v=HB3KCG0ll6g
 One you get the app open here are the instructions on how to see the full feature set running on a single device.
 
 If at any point you get a "ROOMDATABASE ERROR" please uninstall the app and relaunch
+When typing, you may see warnings on logcat. These can be ignored. 
 
 Select HOST to start up a server
 
