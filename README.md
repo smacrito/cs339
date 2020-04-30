@@ -1,4 +1,6 @@
 **CS339**
+## Explaination
+
 
 ## Running
 We suggest running from within android studio, since it allows you to run the code immediate on a virtual device. 
