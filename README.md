@@ -1,6 +1,8 @@
 **CS339**
 ## Explaination
-
+This is a basic program that allows the connection of two phones via UDP to transfer data. It utilizes the room data base to maintain consistency and redundancy. 
+The heart of the program enables the user to send questions to other users in a quiz form, to which they can then answer on another phone. This app is created for android,
+And required API level 26 or higher. 
 
 ## Running
 We suggest running from within android studio, since it allows you to run the code immediate on a virtual device. 
